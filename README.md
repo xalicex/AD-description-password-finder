@@ -4,6 +4,7 @@ Developed in the context of my work at Caisse Nationale de l'Assurance Maladie.
 
 Official repository here https://github.com/AssuranceMaladieSec/AD-description-password-finder
 
+However, this repo **will be maintain**.
 -----
 
 The purpose of this tool is to check if passwords are stored in clear text in the description of Active Directory accounts.
