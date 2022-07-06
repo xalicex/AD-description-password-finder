@@ -14,6 +14,7 @@
 
 from os import path
 import json
+import re
 from datetime import datetime
 import argparse
 import logging
@@ -156,8 +157,10 @@ def hashes_desc(dic_csv):
     
     #For each user 
     for elem in dic_csv:
+        # remove some expression so we don't miss some password
+        sub_str = re.sub("(pass:)|(pass=)|(passe:)|(passe=)|(passwd=)|(passwd:)", " ", dic_csv[elem])
         #split the description in substring (separator is space)
-        sub_str = dic_csv[elem].split()
+        sub_str = sub_str.split()
         #retrieve the whole description too
         desc = dic_csv[elem]
         #convert into NT hash the whole description and put it at first element of the user entry in the new dico
